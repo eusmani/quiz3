@@ -1,0 +1,29 @@
+section .data
+    x DD 15
+    y DD 5
+    z DD 3
+    result DD 0
+
+section .text
+        global _start
+
+_start:
+    mov eax, DWORD [x]
+    mov ebx, DWORD [y]
+    mov ecx, DWORD [z]
+
+    call add_three_numbers
+
+
+    mov eax, 1
+    xor ebx, ebx
+    int 0x80
+
+add_three_numbers:
+
+    add eax, ebx
+    add eax, ecx
+
+    mov dword [result], eax
+
+   ret
