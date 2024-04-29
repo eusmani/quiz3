@@ -24,6 +24,6 @@ add_three_numbers:
     add eax, ebx
     add eax, ecx
 
-    mov dword [result], eax
+    mov DWORD [result], eax
 
    ret
